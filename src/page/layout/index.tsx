@@ -48,14 +48,14 @@ function Layout() {
   }
 
   // 3 秒后路由跳转
-  setTimeout(() => {
-    pushState("/home?name=HZFEStudio");
-  }, 3000);
+  // setTimeout(() => {
+  //   pushState("/home?name=HZFEStudio");
+  // }, 3000);
 
   // 6 秒后返回
-  setTimeout(() => {
-    window.history.back();
-  }, 6000);
+  // setTimeout(() => {
+  //   window.history.back();
+  // }, 6000);
 
   return (
     <div>
