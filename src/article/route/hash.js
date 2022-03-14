@@ -17,14 +17,6 @@ function parseHash(hash) {
   };
 }
 
-let url = "https://example.com:8042/over/there?name=ferret#nose";
-console.log(parseHash(url));
-
-// {
-//     pathname: 'https://example.com:8042/over/there',
-//     search: 'name=ferret#nose'
-// }
-
 /**
  * 监听 hash 变化
  * @returns
@@ -43,4 +35,14 @@ function onHashChange() {
   }
 }
 
+// 监听 hashchange 事件,当 pathname 发生变化的时候,修改页面内容
+
+// 优点
+// 1.兼容性最佳。
+// 2.无需服务端配置。
+
+// 缺点
+// 1. 服务端无法获取 hash 部分内容。
+// 2. 可能和锚点功能冲突。
+// 3. SEO 不友好。
 window.addEventListener("hashchange", onHashChange);
