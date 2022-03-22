@@ -6,6 +6,7 @@ import UnitTest from "../page/unit-test";
 import Webpack from "../page/webpack";
 import XMLHttpRequest from "../page/XMLHttpRequest";
 import NoMatch from "../page/no-match";
+import Timer from "../article/react/hook";
 
 const Index = () => {
   return (
@@ -18,6 +19,8 @@ const Index = () => {
           <Route path="webpack" element={<Webpack />} />
 
           <Route path="XMLHttpRequest" element={<XMLHttpRequest />} />
+
+          <Route path="timer" element={<Timer />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

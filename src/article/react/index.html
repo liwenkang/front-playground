@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sayHi(person) {
+        const name = person.name;
+        setTimeout(() => {
+          alert("Hello, " + name);
+        }, 3000);
+      }
+
+      let someone = { name: "Dan" };
+      sayHi(someone);
+
+      someone = { name: "Yuzhi" };
+      sayHi(someone);
+
+      someone = { name: "Dominic" };
+      sayHi(someone);
+    </script>
+  </body>
+</html>

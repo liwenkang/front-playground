@@ -1,9 +1,27 @@
-// 用于修改 this 指向,并返回新的函数, 通过 bind 实现柯里化。
-const myBind = () => {};
+// `Function.prototype.bind` method implementation
+// https://tc39.es/ecma262/#sec-function.prototype.bind
 
-// 用于修改 this 指向, 传参不同
-// 接受参数数组
-const myApply = () => {};
+var construct = function (C, argsLength, args) {
+  if (!hasOwn(factories, argsLength)) {
+    for (var list = [], i = 0; i < argsLength; i++) list[i] = "a[" + i + "]";
+    factories[argsLength] = Function(
+      "C,a",
+      "return new C(" + join(list, ",") + ")"
+    );
+  }
+  return factories[argsLength](C, args);
+};
 
-// 接受参数列表
-const myCall = () => {};
+module.exports = function bind(that /* , ...args */) {
+  var F = this;
+  var Prototype = F.prototype;
+  var partArgs = [...arguments].slice(1);
+  var boundFunction = function bound(/* args... */) {
+    var args = [...partArgs, ...arguments];
+    return this instanceof boundFunction
+      ? construct(F, args.length, args)
+      : F.apply(that, args);
+  };
+  if (typeof Prototype === "object") boundFunction.prototype = Prototype;
+  return boundFunction;
+};

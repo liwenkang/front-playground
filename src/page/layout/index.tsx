@@ -9,6 +9,7 @@ function Layout() {
         <Link to="/unit-test">unit-test</Link>
         <Link to="/webpack">webpack</Link>
         <Link to="/XMLHttpRequest">XMLHttpRequest</Link>
+        <Link to="/timer">timer</Link>
         <Link to="/404">no-match</Link>
       </div>
       <hr />
