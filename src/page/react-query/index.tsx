@@ -51,7 +51,7 @@ const ReactQuery = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ backgroundColor: "yellow" }}>
       <div>数据展示</div>
       <div>
         {cats.map((item: CatDTO) => (
