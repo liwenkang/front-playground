@@ -1,0 +1,22 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*.{js,tsx}]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+indent_style = space
+indent_size = 2 # 设置整数表示规定每级缩进的列数和 soft-tabs 的宽度（译注：空格数）。如果设定为 tab，则会使用 tab_width 的值（如果已指定）。
+tab_width = 2 # 设置整数用于指定替代 tab 的列数。默认值就是 indent_size 的值，一般无需指定。
+trim_trailing_whitespace = true
+max_line_length = 80
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+

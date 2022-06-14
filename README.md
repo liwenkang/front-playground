@@ -1,5 +1,4 @@
-## playground
+## REACT-2022
 
-0. 跨域问题
-1. react-query 增删改查(1.表单,2.表格)
-2. unit-test
+vite + react + typescript + pnpm + eslint + prettier + Redux Toolkit + React
+Query + React Router + Styled Components + Jest + Cypress + date-fns
