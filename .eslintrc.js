@@ -12,7 +12,5 @@ module.exports = {
     amd: true,
     node: true,
   },
-  rules: {
-    'no-console': 'error',
-  },
+  rules: {},
 };

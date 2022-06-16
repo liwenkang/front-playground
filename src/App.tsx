@@ -1,46 +1,17 @@
-import { useState } from 'react';
-import './App.css';
+import { useRoutes } from 'react-router-dom';
+import routes from './routes';
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  // The useRoutes() hook allows you to define your routes as JavaScript objects
+  // instead of <Routes> and <Route> elements. This is really just a style
+  // preference for those who prefer to not use JSX for their routes config.
+  const element = useRoutes(routes);
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <p>Hello Vite + React!</p>
-        <p>
-          <button
-            type='button'
-            onClick={() => setCount((count) => count + 1)}
-          >
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <h1>Front Playground</h1>
+
+      {element}
     </div>
   );
 }
-
-export default App;
