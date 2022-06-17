@@ -1,6 +1,5 @@
 import React from 'react';
-import type { RouteObject } from 'react-router-dom';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useRoutes } from 'react-router-dom';
 import Record from './markdown/record/index';
 import Article from './markdown/article/index';
 
@@ -32,7 +31,7 @@ function NoMatch() {
   return <div>啥也没找到</div>;
 }
 
-const routes: RouteObject[] = [
+const routes = [
   {
     path: '/',
     element: <Layout />,
@@ -50,4 +49,4 @@ const routes: RouteObject[] = [
   },
 ];
 
-export default routes;
+export default () => useRoutes(routes);

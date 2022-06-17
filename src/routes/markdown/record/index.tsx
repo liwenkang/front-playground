@@ -1,7 +1,11 @@
-import { Routes, Route, Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useRoutes } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
-export default function App() {
+export default () => {
+  /**
+   * @param relativeUrl 读取 markdown 文件的相对路径
+   * @returns {name: 文件名称, element: ReactMarkdown}[]
+   */
   const _getReactMarkdownArray: () => {
     name: string;
     element: JSX.Element;
@@ -10,13 +14,13 @@ export default function App() {
       as: 'raw',
     });
     const result: { name: string; element: JSX.Element }[] = [];
-    Object.keys(Mixins).map((key) => {
-      const fileNameArray = key.match(/[^/]+$/);
+    Object.keys(Mixins).map((path) => {
+      const fileNameArray = path.match(/[^/]+$/);
       if (fileNameArray) {
-        const fileName = fileNameArray[0];
-        const context: string = Mixins[key] as unknown as string;
+        const name = fileNameArray[0];
+        const context: string = Mixins[path] as unknown as string;
         result.push({
-          name: fileName,
+          name: name,
           element: <ReactMarkdown>{context}</ReactMarkdown>,
         });
       }
@@ -26,7 +30,7 @@ export default function App() {
 
   const reactMarkdownArray = _getReactMarkdownArray();
 
-  function Record() {
+  function Nav() {
     return (
       <>
         <nav>
@@ -49,20 +53,16 @@ export default function App() {
     );
   }
 
-  return (
-    <Routes>
-      <Route
-        path='/'
-        element={<Record />}
-      >
-        {reactMarkdownArray.map((item) => (
-          <Route
-            key={item.name}
-            path={item.name}
-            element={item.element}
-          ></Route>
-        ))}
-      </Route>
-    </Routes>
-  );
-}
+  const routes = [
+    {
+      path: '/',
+      element: <Nav />,
+      children: reactMarkdownArray.map((item) => ({
+        path: item.name,
+        element: item.element,
+      })),
+    },
+  ];
+
+  return useRoutes(routes);
+};
