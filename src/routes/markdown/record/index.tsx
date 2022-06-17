@@ -1,5 +1,9 @@
 import { Link, Outlet, useRoutes } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import rehypeRaw from 'rehype-raw';
+import rehypeHighlight from 'rehype-highlight';
 
 export default () => {
   /**
@@ -15,13 +19,21 @@ export default () => {
     });
     const result: { name: string; element: JSX.Element }[] = [];
     Object.keys(Mixins).map((path) => {
-      const fileNameArray = path.match(/[^/]+$/);
+      const fileNameArray = path.match(/([^\\/]+)\.([^\\/]+)/);
       if (fileNameArray) {
-        const name = fileNameArray[0];
+        const name = fileNameArray[1];
         const context: string = Mixins[path] as unknown as string;
         result.push({
           name: name,
-          element: <ReactMarkdown>{context}</ReactMarkdown>,
+          element: (
+            <div style={{ width: '60vw', margin: '0 auto' }}>
+              <ReactMarkdown
+                children={context}
+                remarkPlugins={[remarkGfm, remarkToc]}
+                rehypePlugins={[rehypeHighlight, rehypeRaw]}
+              />
+            </div>
+          ),
         });
       }
     });
