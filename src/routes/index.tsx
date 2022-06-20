@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useRoutes } from 'react-router-dom';
-import Record from './markdown/record/index';
-import Article from './markdown/article/index';
+import Code from './code';
+import Markdown from './markdown';
 
 function Layout() {
   return (
@@ -9,13 +9,10 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to='/article'>article</Link>
-          </li>
-          <li>
-            <Link to='/record'>record</Link>
-          </li>
-          <li>
             <Link to='/code'>code</Link>
+          </li>
+          <li>
+            <Link to='/markdown'>markdown</Link>
           </li>
         </ul>
       </nav>
@@ -37,12 +34,12 @@ const routes = [
     element: <Layout />,
     children: [
       {
-        path: '/article',
-        element: <Article />,
+        path: '/markdown/*',
+        element: <Markdown />,
       },
       {
-        path: '/record/*',
-        element: <Record />,
+        path: '/code/*',
+        element: <Code />,
       },
       { path: '*', element: <NoMatch /> },
     ],

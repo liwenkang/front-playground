@@ -5,25 +5,25 @@ import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
 
+interface ReactMarkdownDTO {
+  path: string;
+  name: string;
+  element: JSX.Element;
+}
+
 export default () => {
-  /**
-   * @param relativeUrl 读取 markdown 文件的相对路径
-   * @returns {name: 文件名称, element: ReactMarkdown}[]
-   */
-  const _getReactMarkdownArray: () => {
-    name: string;
-    element: JSX.Element;
-  }[] = () => {
+  const _getReactMarkdownArray: () => ReactMarkdownDTO[] = () => {
     const Mixins = import.meta.glob('../../../pages/markdown/record/*.md', {
       as: 'raw',
     });
-    const result: { name: string; element: JSX.Element }[] = [];
+    const result: ReactMarkdownDTO[] = [];
     Object.keys(Mixins).map((path) => {
       const fileNameArray = path.match(/([^\\/]+)\.([^\\/]+)/);
       if (fileNameArray) {
         const name = fileNameArray[1];
         const context: string = Mixins[path] as unknown as string;
         result.push({
+          path: `/markdown/record/${name}`,
           name: name,
           element: (
             <div style={{ width: '60vw', margin: '0 auto' }}>
@@ -51,7 +51,7 @@ export default () => {
               <li>
                 <Link
                   key={item.name}
-                  to={`/record/${item.name}`}
+                  to={item.path}
                 >
                   {item.name}
                 </Link>
