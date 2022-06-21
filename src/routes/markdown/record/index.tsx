@@ -13,7 +13,7 @@ interface ReactMarkdownDTO {
 
 export default () => {
   const _getReactMarkdownArray: () => ReactMarkdownDTO[] = () => {
-    const Mixins = import.meta.glob('../../../pages/markdown/record/*.md', {
+    const Mixins = import.meta.glob(`../../../pages/markdown/record/*.md`, {
       as: 'raw',
     });
     const result: ReactMarkdownDTO[] = [];
