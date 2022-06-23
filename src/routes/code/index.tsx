@@ -1,6 +1,7 @@
 import { useRoutes, Link, Outlet } from 'react-router-dom';
 import Jest from './jest';
 import ReactQuery from './react-query';
+import Redux from './redux';
 
 export default () => {
   function Layout() {
@@ -13,6 +14,9 @@ export default () => {
             </li>
             <li>
               <Link to='/code/react-query'>react-query</Link>
+            </li>
+            <li>
+              <Link to='/code/redux'>redux</Link>
             </li>
           </ul>
         </nav>
@@ -36,6 +40,10 @@ export default () => {
         {
           path: '/react-query/*',
           element: <ReactQuery />,
+        },
+        {
+          path: '/redux/*',
+          element: <Redux />,
         },
       ],
     },
