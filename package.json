@@ -11,10 +11,10 @@
     "create-daily-record": "node ./script/create-daily-record.js"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.2",
+    "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
     "dayjs": "^1.11.3",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -32,18 +32,18 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@types/eslint": "^8.4.3",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
+    "@types/eslint": "^8.4.5",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
     "@vitejs/plugin-react": "^1.3.2",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "2.6.2",
     "typescript": "^4.7.4",
-    "vite": "^2.9.13",
+    "vite": "^2.9.14",
     "vite-plugin-eslint": "^1.6.1"
   },
   "hooks": {
