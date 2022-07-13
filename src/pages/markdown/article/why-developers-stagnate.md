@@ -1,3 +1,6 @@
+From:
+[Why Developers Stagnate](https://blog.devgenius.io/why-developers-stagnate-77d9bfc5c91e)
+
 ## 为何开发者举步不前?
 
     逆水行舟,不进则退
