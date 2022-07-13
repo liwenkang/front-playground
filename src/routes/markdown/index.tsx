@@ -2,11 +2,12 @@ import React from 'react';
 import { useRoutes, Link, Outlet } from 'react-router-dom';
 import Article from './article';
 import Record from './record';
+import VerticalLine from '../../pages/components/VerticalLine';
 
 export default () => {
   function Layout() {
     return (
-      <div>
+      <div style={{ display: 'flex' }}>
         <nav>
           <ul>
             <li>
@@ -18,7 +19,7 @@ export default () => {
           </ul>
         </nav>
 
-        <hr />
+        <VerticalLine />
 
         <Outlet />
       </div>

@@ -1,4 +1,5 @@
 import { useRoutes, Link, Outlet } from 'react-router-dom';
+import VerticalLine from '../../pages/components/VerticalLine';
 import Jest from './jest';
 import ReactQuery from './react-query';
 import Redux from './redux';
@@ -21,7 +22,7 @@ export default () => {
           </ul>
         </nav>
 
-        <hr />
+        <VerticalLine />
 
         <Outlet />
       </div>

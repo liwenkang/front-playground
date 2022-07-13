@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
 import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
-
+import VerticalLine from '../../../pages/components/VerticalLine';
 interface ReactMarkdownDTO {
   path: string;
   name: string;
@@ -44,7 +44,7 @@ export default () => {
 
   function Nav() {
     return (
-      <>
+      <div style={{ display: 'flex' }}>
         <nav>
           <ul>
             {reactMarkdownArray.map((item) => (
@@ -60,8 +60,10 @@ export default () => {
           </ul>
         </nav>
 
+        <VerticalLine />
+
         <Outlet />
-      </>
+      </div>
     );
   }
 

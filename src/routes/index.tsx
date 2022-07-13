@@ -2,10 +2,11 @@ import React from 'react';
 import { Outlet, Link, useRoutes } from 'react-router-dom';
 import Code from './code';
 import Markdown from './markdown';
+import VerticalLine from '../pages/components/VerticalLine';
 
 function Layout() {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <nav>
         <ul>
           <li>
@@ -17,7 +18,7 @@ function Layout() {
         </ul>
       </nav>
 
-      <hr />
+      <VerticalLine />
 
       <Outlet />
     </div>
