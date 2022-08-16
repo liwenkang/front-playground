@@ -31,9 +31,8 @@ From:
 我们不知道什么是更好的,所以在创作之后,就是试验和错误.进化论决定了,如果一种变化让
 动物变的更好,它就会发展壮大并迅速传播.而糟糕的变化将会灭亡
 
-作为开发者,我们通过尝试不同的事情,学习新技能,探索工作方法从而提示我们的技术.This
-will lead to some best practices that don’t work but(ps: I can't understand this
-sentence, so I ask the author for help)
+作为开发者,我们通过尝试不同的事情,学习新技能,探索工作方法从而提示我们的技术.这将
+使得一些最佳实践只在某些情况下生效,也就是说不是万能的.
 
 ### 环境
 
