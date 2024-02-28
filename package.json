@@ -30,8 +30,8 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
     "@types/eslint": "^8.4.5",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
